@@ -6,7 +6,7 @@ Başçı, E., Emekci, H., & Apaydın, M. O. (2025). "Is there a threshold effect
 
 ---
 
-## 📖 Overview
+## Overview
 
 This repository provides complete replication materials for analyzing threshold effects of money growth on inflation in G20 countries (1999–2023). We apply Hansen's (2017) regression kink methodology to identify non-linear monetary transmission mechanisms.
 
@@ -14,7 +14,7 @@ This repository provides complete replication materials for analyzing threshold 
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 threshold-on-money-growth/
@@ -35,7 +35,7 @@ threshold-on-money-growth/
 
 ---
 
-## 📈 Data
+##  Data
 
 **File:** `data/ArticleData.xlsx`
 
@@ -63,7 +63,7 @@ threshold-on-money-growth/
 
 ---
 
-## 📐 Methodology
+## Methodology
 
 ### Regression Kink Model (Hansen 2017)
 
@@ -159,24 +159,6 @@ install.packages(c("readxl", "dplyr", "tidyr", "zoo", "ggplot2"))
 **System:**
 - RAM: 4GB minimum (8GB+ recommended)
 - Time: 10 minutes (quick) to 1 hour (full replication)
-
----
-
-## 🚀 Quick Start
-
-```bash
-# 1. Clone repository
-git clone https://github.com/hemekci/threshold-on-money-growth.git
-cd threshold-on-money-growth
-
-# 2. Open R and install packages
-R
-install.packages(c("readxl", "dplyr", "tidyr", "zoo", "ggplot2"))
-
-# 3. Run analysis
-setwd("scripts/")
-source("main_analysis.R")  # Quick version
-```
 
 ---
 
