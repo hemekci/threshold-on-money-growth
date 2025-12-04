@@ -73,10 +73,10 @@ Yₜ = β₀ + ρYₜ₋₁ + β₁₋(Xₜ - γ)₋ + β₁₊(Xₜ - γ)₊ + 
 ```
 
 Where:
-- `Yₜ` = Inflation rate (GDP deflator) in year t
+- `Yₜ` = Inflation year t
 - `Yₜ₋₁` = Lagged inflation (captures inflation persistence)
 - `ρ` = Coefficient of inflation persistence
-- `Xₜ` = Excess money growth (M3 growth minus real GDP growth) in year t
+- `Xₜ` = Excess money growth in year t
 - `γ` = Kink point/threshold parameter (estimated)
 - `(Xₜ - γ)₋` = Negative deviations from the kink point γ
 - `(Xₜ - γ)₊` = Positive deviations from the kink point γ
@@ -116,16 +116,16 @@ Hansen, B.E. (2017). "Regression kink with an unknown threshold." *Journal of Bu
 
 Contains:
 1. **Linear Model** (baseline)
-   - Coefficient βₘ₃ₐ = 0.37 (SE = 0.093, p < 0.01)
-   - Inflation persistence ρ = 0.62 (SE = 0.064)
-   - Constant β₀ = -0.65 (SE = 0.504)
+   - Coefficient βₘ₃ₐ = 0.37 
+   - Inflation persistence ρ = 0.62
+   - Constant β₀ = -0.65 
 
 2. **Threshold Model** (Hansen's Regression Kink)
-   - Estimated threshold γ̂ = 18.20% (SE = 2.824)
-   - Below threshold: β₁₋ = 0.16 (SE = 0.045)
-   - Above threshold: β₁₊ = 0.75 (SE = 0.194)
-   - Inflation persistence ρ = 0.54 (SE = 0.070)
-   - Constant β₀ = 3.88 (SE = 0.997)
+   - Estimated threshold γ̂ = 18.20% 
+   - Below threshold: β₁₋ = 0.16 
+   - Above threshold: β₁₊ = 0.75 
+   - Inflation persistence ρ = 0.54 
+   - Constant β₀ = 3.88 
 
 3. **Hypothesis Tests**
    - F-test for kink effect: p-value = 0.003 (10,000 bootstrap replications)
@@ -175,7 +175,7 @@ Plain text:
 - Runtime: ~10 minutes
 - Bootstrap replications: 10,000
 - Outputs: Console results + basic plots
-- Use this for: Initial exploration, testing setup
+- Use this for: Initial exploration, basic plots, main replication
 
 ```R
 setwd("scripts/")
