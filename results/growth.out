@@ -1,0 +1,23 @@
+Linear Model, coefficients and error variance 
+           [,1]  [,2]
+m3g        0.37 0.093
+          -0.65 0.504
+deflator1  0.62 0.064
+Error variance 
+[1] 17.25
+Wald Test for Threshold, p-value, & critical value 
+                    90%         
+76.5584  0.0654 62.1256  0.9000 
+Threshold Model Estimates, s.e.'s, and Bootstrap confidence intervals 
+           [,1]  [,2]   [,3]  [,4]
+           0.16 0.045  0.081  0.24
+           0.75 0.194  0.367  1.14
+           3.88 0.997  0.618  7.13
+deflator1  0.54 0.070  0.417  0.66
+gammahat  18.20 2.824 11.100 29.70
+Error variance 
+[1] 14.55
+Bootstrap Critical value for threshold parameter interval 13.18869 
+Computation Time: replications and seconds 
+        elapsed 
+  10000     160 
