@@ -65,31 +65,45 @@ threshold-on-money-growth/
 
 ## Methodology
 
-### Regression Kink Model (Hansen 2017)
+### Hansen's Regression Kink Model
 
 **Model Specification:**
 ```
-y = β₁(x - γ)₋ + β₂(x - γ)₊ + β₃z + ε
+Yₜ = β₀ + ρYₜ₋₁ + β₁₋(Xₜ - γ)₋ + β₁₊(Xₜ - γ)₊ + εₜ
 ```
 
 Where:
-- `y` = Deflator (inflation)
-- `x` = M3LogDiff (money growth)
-- `γ` = Threshold parameter (estimated)
-- `z` = Control variables (lagged deflator)
-- `(x - γ)₋` = min(x - γ, 0) (negative part)
-- `(x - γ)₊` = max(x - γ, 0) (positive part)
+- `Yₜ` = Inflation rate (GDP deflator) in year t
+- `Yₜ₋₁` = Lagged inflation (captures inflation persistence)
+- `ρ` = Coefficient of inflation persistence
+- `Xₜ` = Excess money growth (M3 growth minus real GDP growth) in year t
+- `γ` = Kink point/threshold parameter (estimated)
+- `(Xₜ - γ)₋` = Negative deviations from the kink point γ
+- `(Xₜ - γ)₊` = Positive deviations from the kink point γ
+- `β₀` = Constant term
+- `β₁₋` = Coefficient when excess money growth is below the threshold
+- `β₁₊` = Coefficient when excess money growth exceeds the threshold
+- `εₜ` = Error term
 
 **Interpretation:**
 - The slope changes at the threshold γ
-- Below threshold: inflation responds with slope β₁
-- Above threshold: inflation responds with slope β₂
+- Below threshold: inflation responds with slope β₁₋
+- Above threshold: inflation responds with slope β₁₊
 - Non-linear monetary transmission identified
 
 **Estimation:**
-- Grid search minimizes SSE over threshold parameter
-- Multiplier bootstrap for inference (non-standard asymptotics)
-- Numerical delta method for confidence bands
+- Least squares based estimation with concentration and grid search (0-40% range)
+- Method selects kink value minimizing sum of squared residuals
+- Bootstrap method for hypothesis testing (non-standard asymptotics)
+
+**Testing for Kink Effect:**
+
+F-test statistic:
+```
+F*ₖ = [SSEₖ₀ - SSEₖ₁(γ̂)] / [SSEₖ₁(γ̂)/(T - 1)]
+```
+
+Where SSEₖ₀ is sum of squared errors under null (linear model), SSEₖ₁(γ̂) under alternative (one kink model), and T is number of observations.
 
 **Reference:**
 Hansen, B.E. (2017). "Regression kink with an unknown threshold." *Journal of Business & Economic Statistics*, 35(2), 228-240.
@@ -102,23 +116,27 @@ Hansen, B.E. (2017). "Regression kink with an unknown threshold." *Journal of Bu
 
 Contains:
 1. **Linear Model** (baseline)
-   - Coefficients and standard errors
-   - Error variance
+   - Coefficient βₘ₃ₐ = 0.37 (SE = 0.093, p < 0.01)
+   - Inflation persistence ρ = 0.62 (SE = 0.064)
+   - Constant β₀ = -0.65 (SE = 0.504)
 
-2. **Threshold Model**
-   - Estimated threshold γ̂
-   - Coefficients β₁, β₂, β₃
-   - Standard errors
-   - Bootstrap confidence intervals
+2. **Threshold Model** (Hansen's Regression Kink)
+   - Estimated threshold γ̂ = 18.20% (SE = 2.824)
+   - Below threshold: β₁₋ = 0.16 (SE = 0.045)
+   - Above threshold: β₁₊ = 0.75 (SE = 0.194)
+   - Inflation persistence ρ = 0.54 (SE = 0.070)
+   - Constant β₀ = 3.88 (SE = 0.997)
 
 3. **Hypothesis Tests**
-   - Wald test statistic
-   - p-value for threshold effect
-   - Critical values
+   - F-test for kink effect: p-value = 0.003 (10,000 bootstrap replications)
+   - Strong rejection of null hypothesis (linear model)
+   - Confirms presence of threshold effect
 
-4. **Computational Info**
-   - Bootstrap replications
-   - Computation time
+4. **Key Findings**
+   - Asymmetric monetary transmission identified
+   - Modest inflationary impact below threshold (β₁₋ = 0.16)
+   - Sharply amplified effect above threshold (β₁₊ = 0.75)
+   - Critical threshold at 18.2% excess money growth
 
 ### Figures
 
