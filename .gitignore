@@ -1,0 +1,27 @@
+# R files
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+
+# Data files (if large)
+# Uncomment if data files are too large for GitHub
+# data/raw/*
+# data/processed/*
+
+# Results (can be regenerated)
+# results/tables/*
+# results/figures/*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
+*.tmp
+*.swp
+
+# Output files
+*.log
+*.out
