@@ -96,7 +96,7 @@ Hansen, B.E. (2017). "Regression kink with an unknown threshold." *Journal of Bu
 
 ---
 
-## 📄 Results
+## Results
 
 ### Main Output File: `results/growth.out`
 
@@ -125,7 +125,7 @@ Contains:
 **Included (s1-s4.jpeg):**
 Main results from the published paper
 
-**Generated (fig*.eps):**
+**You can generate (fig*.eps):**
 - `fig3.eps`: Least squares criterion (SSE vs threshold)
 - `fig4.eps`: Confidence interval construction
 - `fig5.eps`: Naive asymptotic intervals (simulation)
@@ -144,25 +144,13 @@ Plain text:
 > Başçı, E., Emekci, H., & Apaydın, M. O. (2025). Is there a threshold effect of money growth on inflation? *Applied Economics Letters*. https://doi.org/10.1080/13504851.2025.2596815
 
 ---
-
-## 🔧 Requirements
-
-**Software:**
-- R ≥ 4.2
-- RStudio (recommended)
-
-**R Packages:**
-```R
-install.packages(c("readxl", "dplyr", "tidyr", "zoo", "ggplot2"))
-```
+##  Scripts
 
 **System:**
 - RAM: 4GB minimum (8GB+ recommended)
 - Time: 10 minutes (quick) to 1 hour (full replication)
 
----
 
-##  Scripts
 
 ### main_analysis.R
 **Quick analysis for exploration**
