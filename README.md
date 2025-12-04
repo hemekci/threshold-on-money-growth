@@ -164,10 +164,15 @@ Plain text:
 ---
 ##  Scripts
 
+### Credits
+
+Parts of this codebase were inspired by Yang and Su (2018). 
+We acknowledge their open-source contributions. We reviewed their code implementation while developing our own structure.
+* **Source Code:** [lixiongyang/Yang](https://github.com/lixiongyang/Yang)
+
 **System:**
 - RAM: 4GB minimum (8GB+ recommended)
 - Time: 10 minutes (quick) to 1 hour (full replication)
-
 
 
 ### main_analysis.R
